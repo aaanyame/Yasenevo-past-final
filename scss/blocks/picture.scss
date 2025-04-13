@@ -1,0 +1,23 @@
+// Файл: picture.scss
+// Секция c фоновым изображением (.picture)
+
+.picture {
+  &__wrapper {
+    width: 100%;
+    height: 436px;
+    // Используем .webp как фон
+    background: url("../assets/images/wrapper@1x.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 834px) {
+  .picture {
+    &__wrapper {
+      // Меньше высота для мобильной версии
+      height: 250px;
+    }
+  }
+}

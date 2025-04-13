@@ -1,0 +1,18 @@
+// Файл: style.scss
+// Этот файл — "агрегатор". Здесь показано, что он импортирует минифицированные файлы CSS.
+
+@import url('./fonts.min.css');
+@import url('./reset.min.css');
+@import url('./main.min.css');
+@import url('./header.min.css');
+@import url('./footer.min.css');
+@import url('./about.min.css');
+@import url('./hero.min.css');
+@import url('./inf.min.css');
+@import url('./map.min.css');
+@import url('./pdf.min.css');
+@import url('./picture.min.css');
+@import url(/css/plans.min.css);
+
+// По факту здесь просто собраны ссылки на уже скомпилированные файлы .min.css.
+// Это не классический подход, но в рамках проекта так реализовано.

@@ -1,0 +1,164 @@
+// Файл: inf.scss
+// Описывает стили инфраструктуры .inf
+
+.inf {
+  padding-top: 100px;
+
+  &__info-text {
+    display: inline;
+    position: relative;
+    color: var(--grayscale-black);
+    background: var(--grayscale-white);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-right: 6px;
+    z-index: 10;
+  }
+
+  &__info-text::before {
+    position: absolute;
+    content: "";
+    background: var(--grayscale-black);
+    width: 640px;
+    height: 2px;
+    top: 8px;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__info-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 46px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:first-child {
+    // Растянем на 2 колонки
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  &__item:nth-child(2) {
+    // Задаём позицию второго элемента
+    grid-area: 1 / 3 / 3 / 4;
+  }
+
+  &__item-illustration {
+    z-index: 1;
+  }
+
+  &__item-desc {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    color: var(--grayscale-white);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    z-index: 2;
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .inf {
+    padding-top: 60px;
+
+    &__list {
+      // Переход на 2 колонки, 4 строки
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 10px;
+    }
+
+    &__item:first-child {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    &__item:nth-child(2) {
+      order: 4;
+      grid-area: 3 / 1 / 5 / 2;
+    }
+    &__item:nth-child(3) {
+      order: 5;
+    }
+    &__item:nth-child(4) {
+      order: 2;
+    }
+    &__item:nth-child(5) {
+      order: 3;
+    }
+    &__item:last-child {
+      order: 6;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .inf {
+    padding-top: 50px;
+
+    &__info {
+      overflow: hidden;
+    }
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__info-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: 29px;
+      max-width: 346px;
+    }
+
+    &__list {
+      // Переходим на обычный flex-стек
+      display: flex;
+      flex-direction: column;
+      column-gap: 15px;
+      row-gap: 10px;
+    }
+
+    &__item-desc {
+      font-size: 18px;
+    }
+  }
+}

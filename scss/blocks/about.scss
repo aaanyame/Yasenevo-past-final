@@ -1,0 +1,233 @@
+// Файл: about.scss
+// Отвечает за стили секции "О проекте" (.about ...)
+
+.about {
+  &__info {
+    max-width: 665px;
+  }
+
+  &__info-text {
+    // Подчёркивание "О проекте" через псевдоэлемент ::before
+    display: inline;
+    position: relative;
+    color: var(--grayscale-black);
+    background: var(--grayscale-white);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-right: 6px;
+    z-index: 10;
+  }
+
+  &__info-text::before {
+    // Линия за текстом
+    position: absolute;
+    content: "";
+    background: var(--grayscale-black);
+    width: 640px;
+    height: 2px;
+    top: 8px;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__info-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 46px;
+  }
+
+  &__info-desc {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 98px;
+  }
+
+  &__info-content {
+    // Синяя подложка
+    background: var(--primary-blue-100);
+    padding: 68px 55px;
+  }
+
+  &__info-list {
+    // Список преимуществ
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__info-images {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__info-item--desc {
+    color: var(--grayscale-white);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  // Ограничение ширины описания для определённых элементов
+  &__info-item:first-child &__info-item--desc {
+    max-width: 240px;
+  }
+
+  &__info-item:nth-child(2) &__info-item--desc {
+    max-width: 285px;
+  }
+
+  &__info-item:nth-child(4) &__info-item--desc {
+    max-width: 285px;
+  }
+
+  &__info-more {
+    margin-left: auto;
+    max-width: 634px;
+    padding: 85px 0 100px;
+  }
+
+  &__info-more-desc {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 17px;
+  }
+}
+
+// Адаптивная верстка для разрешений меньше 1440px
+@media (max-width: 1440px) {
+  .about {
+    &__info {
+      max-width: 665px;
+    }
+
+    &__info-desc {
+      margin-bottom: 80px;
+    }
+
+    &__info-list {
+      // Переход на одну колонку
+      grid-template-columns: repeat(1, 1fr);
+      gap: 25px;
+    }
+
+    &__info-item:nth-child(3) &__info-item--desc {
+      max-width: 343px;
+    }
+
+    &__info-more {
+      margin-left: 0;
+      max-width: 634px;
+      padding: 80px 90px 80px 0;
+    }
+
+    &__info-more-desc {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 17px;
+    }
+  }
+}
+
+// Адаптивная верстка для разрешений меньше 834px
+@media (max-width: 834px) {
+  .about {
+    &__info {
+      overflow: hidden;
+    }
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__info-title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      margin-bottom: 31px;
+    }
+
+    &__info-desc {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 45px;
+    }
+
+    &__info-content {
+      background: var(--primary-blue-100);
+      padding: 50px 22px;
+    }
+
+    &__info-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__info-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__info-images {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__info-item--desc {
+      color: var(--grayscale-white);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    &__info-more {
+      margin-left: 0;
+      padding: 60px 0 78px;
+    }
+
+    &__info-more-desc {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 34px;
+    }
+  }
+}

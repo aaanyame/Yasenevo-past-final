@@ -1,0 +1,198 @@
+// Файл: pdf.scss
+// Секция с презентацией (pdf)
+
+.pdf {
+  &__wrapper {
+    margin-top: 62px;
+    padding-bottom: 115px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__info-text {
+    display: inline;
+    position: relative;
+    color: var(--grayscale-black);
+    background: var(--grayscale-white);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-right: 6px;
+    z-index: 10;
+  }
+
+  &__info-text::before {
+    position: absolute;
+    content: "";
+    background: var(--grayscale-black);
+    width: 640px;
+    height: 2px;
+    top: 8px;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__info-title {
+    font-size: 36px;
+    font-weight: 600;
+    max-width: 600px;
+  }
+
+  // Стилизация списка внутри .pdf
+  & ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 46px;
+  }
+
+  &__item {
+    color: var(--grayscale-10);
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__illustration {
+    display: block;
+    padding-top: 60px;
+    width: 138px;
+    height: 138px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .pdf {
+    &__wrapper {
+      margin-top: 60px;
+      padding-bottom: 266px;
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+    }
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__info-title {
+      font-size: 36px;
+      max-width: 560px;
+    }
+
+    & ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      padding-top: 46px;
+      padding-bottom: 46px;
+    }
+
+    &__item {
+      color: var(--grayscale-10);
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &__illustration {
+      padding-top: 80px;
+      width: 113px;
+      height: 113px;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .pdf {
+    &__wrapper {
+      position: relative;
+      margin-top: 62px;
+      padding-bottom: 115px;
+      overflow: hidden;
+    }
+
+    &__content {
+      flex-direction: column;
+      align-items: self-start;
+    }
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__info-title {
+      font-size: 20px;
+      font-weight: 600;
+      padding-top: 10px;
+      max-width: 312px;
+    }
+
+    & ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-bottom: 26px;
+    }
+
+    &__item {
+      color: var(--grayscale-10);
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &__illustration {
+      padding-top: 0px;
+      padding-left: 30px;
+      top: 170px;
+      left: -15px;
+      width: 113px;
+      height: 113px;
+    }
+  }
+}

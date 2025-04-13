@@ -1,0 +1,122 @@
+// Файл: map.scss
+// Секция с картой (.map)
+
+.map {
+  &__info-text {
+    display: inline;
+    position: relative;
+    color: var(--grayscale-black);
+    background: var(--grayscale-white);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding-right: 6px;
+    z-index: 10;
+  }
+
+  &__info-text::before {
+    position: absolute;
+    content: "";
+    background: var(--grayscale-black);
+    width: 640px;
+    height: 2px;
+    top: 8px;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__content {
+    padding-top: 25px;
+  }
+
+  &__content iframe {
+    width: 100%;
+    height: 825px;
+    border: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .map {
+    padding-bottom: 60px;
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__content {
+      padding-top: 25px;
+    }
+
+    &__content iframe {
+      width: 100%;
+      height: 574px;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .map {
+    padding-bottom: 80px;
+
+    &__wrapper {
+      overflow: hidden;
+    }
+
+    &__info-text {
+      display: inline;
+      position: relative;
+      color: var(--grayscale-black);
+      background: var(--grayscale-white);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      padding-right: 6px;
+      z-index: 10;
+    }
+
+    &__info-text::before {
+      position: absolute;
+      content: "";
+      background: var(--grayscale-black);
+      width: 640px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__content {
+      padding-top: 25px;
+    }
+
+    &__content iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+  }
+}

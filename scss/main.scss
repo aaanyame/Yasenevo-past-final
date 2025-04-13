@@ -1,0 +1,97 @@
+// Файл: main.scss
+// Здесь хранятся глобальные стили, такие как переменные, базовые цвета, общий сброс для текста и т.п.
+
+// Определяем CSS-переменные (custom properties) в корне документа
+:root {
+    // Градации серого (белый, чёрный, etc.)
+    --grayscale-white: #FFF;
+    --grayscale-black: #000;
+    --grayscale-50: #333;
+    --grayscale-10: #9C9C9C;
+  
+    // Основной синий цвет для фона и кнопок
+    --primary-blue-100: #2C3878;
+  
+    // Ширины брейкпоинтов (используются в @media)
+    --desktop: 1440px;
+    --table: 834px;
+    --mobile: 375px;
+  }
+  
+  // Общие базовые стили
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif; // Используем подключенный Montserrat
+    font-weight: normal;
+    color: var(--grayscale-50);
+  }
+  
+  // Сброс ссылок
+  a {
+    text-decoration: none;
+    color: var(--grayscale-50);
+  }
+  
+  // Цвет текста абзацев
+  p {
+    color: var(--grayscale-10);
+  }
+  
+  // Обёртка страницы
+  .wrapper {
+    background: var(--grayscale-white);
+  }
+  
+  // Стиль кнопок (класс .btn)
+  .btn {
+    display: inline-block;
+    background: var(--primary-blue-100);
+    color: var(--grayscale-white);
+    padding: 14px 32px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-wrap: nowrap;
+  }
+  
+  // Стиль кнопки для формы
+  .form__btn {
+    display: inline-flex;
+    background: var(--grayscale-white);
+    color: var(--grayscale-black);
+    padding: 14px 32px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-wrap: nowrap;
+    border: none;
+    max-width: 244px;
+    cursor: pointer;
+  }
+  
+  // Контейнер с максимальной шириной
+  .container {
+    max-width: var(--desktop);
+    padding: 0 120px;
+    margin: 0 auto;
+  }
+  
+  // Медиа для максимальной ширины 1440px (десктоп)
+  @media (max-width: 1440px) {
+    .container {
+      max-width: var(--desktop);
+      padding: 0 50px;
+      margin: 0 auto;
+    }
+  }
+  
+  // Медиа для планшета (834px)
+  @media (max-width: 834px) {
+    .container {
+      max-width: var(--table);
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+  }
+  
